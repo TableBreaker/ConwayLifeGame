@@ -24,12 +24,18 @@ public class GameController : MonoBehaviour {
   }
 
   private void Update() {
+#if !UNITY_EDITOR
+    if (Input.GetKeyDown(KeyCode.Escape)) {
+      Application.Quit();
+    }
+#endif
+
     if (_state == EGameState.Prepare || _state == EGameState.Paused) {
       return;
     }
 
     _timer += Time.deltaTime;
-    if (_timer > _interval) {
+    if (_timer > interval) {
       Iterate();
       _timer = 0f;
     }
@@ -129,8 +135,8 @@ public class GameController : MonoBehaviour {
   private float _timer;
   private readonly Cell[,] _cellMap = new Cell[WIDTH, HEIGHT];
 
+  public float interval = 1f;
+
   [SerializeField]
   private GameObject _cell;
-  [SerializeField]
-  private float _interval = 1f;
 }

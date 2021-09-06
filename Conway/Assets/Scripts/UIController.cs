@@ -9,6 +9,7 @@ public class UIController : MonoBehaviour
     _start.onClick.AddListener(OnStartButton);
     _pause.onClick.AddListener(OnPauseButton);
     _stop.onClick.AddListener(OnStopButton);
+    _slider.onValueChanged.AddListener(OnSliderValueChanged);
   }
 
   private void OnStartButton() {
@@ -32,10 +33,16 @@ public class UIController : MonoBehaviour
     _stop.GetComponent<Image>().color = Color.green;
   }
 
+  private void OnSliderValueChanged(float value) {
+    GameController.instance.interval = Mathf.Lerp(2, 0.2f, Mathf.Sqrt(value));
+  }
+
   [SerializeField]
   private Button _start;
   [SerializeField]
   private Button _pause;
   [SerializeField]
   private Button _stop;
+  [SerializeField]
+  private Slider _slider;
 }

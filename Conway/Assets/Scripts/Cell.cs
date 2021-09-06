@@ -21,6 +21,10 @@ public class Cell : MonoBehaviour
   }
 
   public void OnMouseDown() {
+    if (Input.mousePosition.x > Screen.width * 0.75f && Input.mousePosition.y > Screen.height * 0.8f) {
+      return;
+    }
+
     Born();
     lifeSnapshot = true;
   }

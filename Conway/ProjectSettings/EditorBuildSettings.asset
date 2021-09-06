@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/conway.unity
+    guid: ff49d01a708b923448e9a3894fad94e5
   m_configObjects: {}
