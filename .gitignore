@@ -1,0 +1,9 @@
+﻿Conway/Library/
+Conway/Logs/
+Conway/.vsconfig
+*.csproj
+*.sln
+Conway/obj/
+Conway/Temp/
+Conway/.vs/
+*.DotSettings
