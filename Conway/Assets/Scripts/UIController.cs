@@ -34,7 +34,7 @@ public class UIController : MonoBehaviour
   }
 
   private void OnSliderValueChanged(float value) {
-    GameController.instance.interval = Mathf.Lerp(2, 0.2f, Mathf.Sqrt(value));
+    GameController.instance.interval = Mathf.Lerp(1f, 0.2f, Mathf.Sqrt(value));
   }
 
   [SerializeField]
